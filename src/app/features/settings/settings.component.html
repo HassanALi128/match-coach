@@ -1,0 +1,92 @@
+<div class="min-h-screen bg-white">
+  <!-- Header -->
+  <div class="px-4 pt-2">
+    <button class="p-2 -ml-2 rounded-full bg-gray-50 mb-3" routerLink="/">
+      <img src="/icons/arrow-back.svg" alt="Back" class="w-6 h-6" />
+    </button>
+    <h1 class="text-display mb-3">Settings</h1>
+  </div>
+
+  <!-- Settings Content -->
+  <div class="px-4">
+    <!-- Details Section -->
+    <div class="mb-4">
+      <h2 class="text-label mb-3 border-b pb-1">Details</h2>
+      <div class="space-y-3">
+        <div class="flex items-center">
+          <div class="w-6 h-6 mr-3">
+            <img src="/icons/email.svg" alt="Email" class="w-5 h-5" />
+          </div>
+          <span class="text-title text-gray-600">{{profileSettings.email}}</span>
+        </div>
+        <div class="flex items-center">
+          <div class="w-6 h-6 mr-3">
+            <img src="/icons/phone.svg" alt="Phone" class="w-5 h-5" />
+          </div>
+          <span class="text-[15px] text-gray-600">{{profileSettings.phone}}</span>
+        </div>
+        <div class="flex items-center">
+          <div class="w-6 h-6 mr-3">
+            <img src="/icons/racquet.svg" alt="Role" class="w-5 h-5" />
+          </div>
+          <span class="text-[15px] text-gray-600">{{profileSettings.role}}</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- General Section -->
+    <div class="mb-4">
+      <h2 class="text-label mb-3 border-b pb-1">General</h2>
+      <button [routerLink]="['/settings/notifications']"
+        class="w-full flex items-center justify-between py-2 active:bg-gray-50 transition-colors duration-200 rounded-lg"
+        (click)="handleButtonClick($event, 'notifications')">
+        <div class="flex items-center">
+          <div class="w-10 h-10 mr-3 rounded-full bg-gray-50 flex items-center justify-center">
+            <img src="/icons/notification.svg" alt="Notifications" class="w-5 h-5" />
+          </div>
+          <span class="text-[15px] text-gray-900">Notifications</span>
+        </div>
+        <svg class="w-5 h-5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+        </svg>
+      </button>
+    </div>
+
+    <!-- Security Section -->
+    <div class="mb-4">
+      <h2 class="text-label mb-3 border-b pb-1">Security</h2>
+      <div class="space-y-3">
+        <button
+          class="w-full flex items-center justify-between py-2 active:bg-gray-50 transition-colors duration-200 rounded-lg"
+          (click)="handleButtonClick($event, 'changePassword')">
+          <div class="flex items-center">
+            <div class="w-10 h-10 mr-3 rounded-full bg-gray-50 flex items-center justify-center">
+              <img src="/icons/lock.svg" alt="Password" class="w-5 h-5" />
+            </div>
+            <div class="flex flex-col items-start">
+              <span class="text-[15px] text-gray-900">Change password</span>
+              <span class="text-[13px] text-gray-400">••••••••</span>
+            </div>
+          </div>
+          <svg class="w-5 h-5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+          </svg>
+        </button>
+
+        <button
+          class="w-full flex items-center justify-between py-2 active:bg-gray-50 transition-colors duration-200 rounded-lg"
+          (click)="handleButtonClick($event, 'deleteAccount')">
+          <div class="flex items-center">
+            <div class="w-10 h-10 mr-3 rounded-full bg-gray-50 flex items-center justify-center">
+              <img src="/icons/cil-trash.svg" alt="Delete" class="w-5 h-5" />
+            </div>
+            <span class="text-[15px] text-gray-900">Delete account</span>
+          </div>
+          <svg class="w-5 h-5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+          </svg>
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

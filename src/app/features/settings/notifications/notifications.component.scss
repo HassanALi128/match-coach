@@ -1,0 +1,49 @@
+// Toggle Switch Styles
+.toggle-switch {
+  position: relative;
+  display: inline-flex;
+  width: 51px;
+  height: 31px;
+
+  &__slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #636363; // Updated to darker gray
+    transition: 0.2s;
+    border-radius: 31px;
+
+    &:before {
+      position: absolute;
+      content: "";
+      height: 27px;
+      width: 27px;
+      left: 2px;
+      bottom: 2px;
+      background-color: white;
+      transition: 0.2s;
+      border-radius: 50%;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    }
+  }
+
+  &--active {
+    .toggle-switch__slider {
+      background-color: #fdb022; // Yellow accent color
+
+      &:before {
+        transform: translateX(20px);
+      }
+    }
+  }
+}
+
+// Optional: Add hover effect
+.toggle-switch:hover {
+  .toggle-switch__slider:before {
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.25);
+  }
+}

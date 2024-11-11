@@ -1,0 +1,120 @@
+<div class="min-h-screen bg-white">
+
+  <!-- Header -->
+  <div class="px-4 pt-2">
+    <button class="p-2 -ml-2 rounded-full bg-gray-50 mb-3" routerLink="/settings">
+      <img src="/icons/arrow-back.svg" alt="Back" class="w-6 h-6" />
+    </button>
+    <h1 class="text-display mb-3">Notifications</h1>
+  </div>
+
+  <!-- Notification Settings -->
+  <div class="px-4">
+    <!-- All Notifications -->
+    <div class="mb-4">
+      <h2 class="text-label mb-3 border-b">All Notifications</h2>
+      <div class="flex items-center justify-between py-2">
+        <div class="flex items-center">
+          <div class="w-10 h-10 mr-3 rounded-full bg-gray-50 flex items-center justify-center">
+            <img src="/icons/notification.svg" alt="Notifications" class="w-5 h-5" />
+          </div>
+          <span class="text-[15px] text-gray-900">Notifications</span>
+        </div>
+        <button
+          class="relative inline-flex w-[51px] h-[31px] rounded-full transition-colors duration-200 focus:outline-none"
+          [class]="settings.pushNotifications ? 'bg-yellow-400' : 'bg-[#636363]'"
+          (click)="toggleMainSetting('pushNotifications')">
+          <span
+            class="inline-block w-[27px] h-[27px] transform translate-y-[2px] rounded-full bg-white shadow-sm transition-transform duration-200"
+            [class]="settings.pushNotifications ? 'translate-x-[22px]' : 'translate-x-[2px]'">
+          </span>
+        </button>
+      </div>
+    </div>
+
+    <!-- Video Share Notifications -->
+    <div class="mb-4">
+      <p class="text-label mb-3 border-b">Notifications about Video is shared with you</p>
+      <div class="space-y-3">
+        <div class="flex items-center justify-between py-2">
+          <div class="flex items-center">
+            <div class="w-10 h-10 mr-3 rounded-full bg-gray-50 flex items-center justify-center">
+              <img src="/icons/email.svg" alt="Email" class="w-5 h-5" />
+            </div>
+            <span class="text-[15px] text-gray-900">Email</span>
+          </div>
+          <button
+            class="relative inline-flex w-[51px] h-[31px] rounded-full transition-colors duration-200 focus:outline-none"
+            [class]="settings.videoShareNotifications.email ? 'bg-yellow-400' : 'bg-[#636363]'"
+            (click)="toggleSetting('videoShare', 'email')">
+            <span
+              class="inline-block w-[27px] h-[27px] transform translate-y-[2px] rounded-full bg-white shadow-sm transition-transform duration-200"
+              [class]="settings.videoShareNotifications.email ? 'translate-x-[22px]' : 'translate-x-[2px]'">
+            </span>
+          </button>
+        </div>
+
+        <div class="flex items-center justify-between py-2">
+          <div class="flex items-center">
+            <div class="w-10 h-10 mr-3 rounded-full bg-gray-50 flex items-center justify-center">
+              <img src="/icons/phone.svg" alt="Push" class="w-5 h-5" />
+            </div>
+            <span class="text-[15px] text-gray-900">Push</span>
+          </div>
+          <button
+            class="relative inline-flex w-[51px] h-[31px] rounded-full transition-colors duration-200 focus:outline-none"
+            [class]="settings.videoShareNotifications.push ? 'bg-yellow-400' : 'bg-[#636363]'"
+            (click)="toggleSetting('videoShare', 'push')">
+            <span
+              class="inline-block w-[27px] h-[27px] transform translate-y-[2px] rounded-full bg-white shadow-sm transition-transform duration-200"
+              [class]="settings.videoShareNotifications.push ? 'translate-x-[22px]' : 'translate-x-[2px]'">
+            </span>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Comment Reply Notifications -->
+    <div class="mb-4">
+      <p class="text-label mb-3 border-b">Notifications about User replies to your comments</p>
+      <div class="space-y-3">
+        <div class="flex items-center justify-between py-2">
+          <div class="flex items-center">
+            <div class="w-10 h-10 mr-3 rounded-full bg-gray-50 flex items-center justify-center">
+              <img src="/icons/email.svg" alt="Email" class="w-5 h-5" />
+            </div>
+            <span class="text-[15px] text-gray-900">Email</span>
+          </div>
+          <button
+            class="relative inline-flex w-[51px] h-[31px] rounded-full transition-colors duration-200 focus:outline-none"
+            [class]="settings.commentReplyNotifications.email ? 'bg-yellow-400' : 'bg-[#636363]'"
+            (click)="toggleSetting('commentReply', 'email')">
+            <span
+              class="inline-block w-[27px] h-[27px] transform translate-y-[2px] rounded-full bg-white shadow-sm transition-transform duration-200"
+              [class]="settings.commentReplyNotifications.email ? 'translate-x-[22px]' : 'translate-x-[2px]'">
+            </span>
+          </button>
+        </div>
+
+        <div class="flex items-center justify-between py-2">
+          <div class="flex items-center">
+            <div class="w-10 h-10 mr-3 rounded-full bg-gray-50 flex items-center justify-center">
+              <img src="/icons/phone.svg" alt="Push" class="w-5 h-5" />
+            </div>
+            <span class="text-[15px] text-gray-900">Push</span>
+          </div>
+          <button
+            class="relative inline-flex w-[51px] h-[31px] rounded-full transition-colors duration-200 focus:outline-none"
+            [class]="settings.commentReplyNotifications.push ? 'bg-yellow-400' : 'bg-[#636363]'"
+            (click)="toggleSetting('commentReply', 'push')">
+            <span
+              class="inline-block w-[27px] h-[27px] transform translate-y-[2px] rounded-full bg-white shadow-sm transition-transform duration-200"
+              [class]="settings.commentReplyNotifications.push ? 'translate-x-[22px]' : 'translate-x-[2px]'">
+            </span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
